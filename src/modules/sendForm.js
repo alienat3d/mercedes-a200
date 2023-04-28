@@ -1,6 +1,6 @@
 "use strict";
-const sendFormFunc = () => {
-  const form = document.querySelector('.form-test-drive')
+const sendFormFunc = (formClass) => {
+  const form = document.querySelector(formClass)
 
   form.addEventListener('submit', (event) => {
     event.preventDefault()

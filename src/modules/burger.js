@@ -1,9 +1,9 @@
 "use strict";
 
-const burgerFunc = () => {
-  const hamburgerMenu = document.querySelector('.hamburger-menu')
-  const menuList = document.querySelector('.menu')
-  const menuItemsList = document.querySelectorAll('.menu-list__item')
+const burgerFunc = (burgerMenu, headerMenu, headerMenuItems) => {
+  const hamburgerMenu = document.querySelector(burgerMenu)
+  const menuList = document.querySelector(headerMenu)
+  const menuItemsList = document.querySelectorAll(headerMenuItems)
   const toggleMenu = () => {
     menuList.classList.toggle('menu-active')
     hamburgerMenu.classList.toggle('hamburger-menu-active')

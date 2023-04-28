@@ -1,9 +1,9 @@
 "use strict"
 
-const smoothScrollFunc = () => {
-  const headerLinks = document.querySelectorAll('.menu-list__link')
-  const scrollDownBtn = document.querySelector('.main__scroll')
-  const testDriveBtn = document.querySelector('.main__button')
+const smoothScrollFunc = (links, scrollButton, testDriveButton) => {
+  const headerLinks = document.querySelectorAll(links)
+  const scrollDownBtn = document.querySelector(scrollButton)
+  const testDriveBtn = document.querySelector(testDriveButton)
   const linksToScroll = [...headerLinks, scrollDownBtn, testDriveBtn]
 
   linksToScroll.forEach(link => {

@@ -1,9 +1,9 @@
 "use strict"
 
-const tabsFunc = () => {
-  const tabsHandlerElements = document.querySelectorAll('[data-tabs-handler]')
-  const tabsContentElements = document.querySelectorAll('[data-tabs-field]')
-  const tabsTitleElements = document.querySelectorAll('.design__title')
+const tabsFunc = (tabsHandler, tabsContent, tabsTitle) => {
+  const tabsHandlerElements = document.querySelectorAll(tabsHandler)
+  const tabsContentElements = document.querySelectorAll(tabsContent)
+  const tabsTitleElements = document.querySelectorAll(tabsTitle)
 
   for (let btn of tabsHandlerElements) {
     btn.addEventListener('click', () => {

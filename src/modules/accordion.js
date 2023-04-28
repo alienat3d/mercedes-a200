@@ -1,8 +1,8 @@
 "use strict"
 
-const accordionFunc = () => {
-  const btns = document.querySelectorAll('.feature__link')
-  const lists = document.querySelectorAll('.feature-sub')
+const accordionFunc = (buttons, contentLists) => {
+  const btns = document.querySelectorAll(buttons)
+  const lists = document.querySelectorAll(contentLists)
 
   const openTab = (tab, idx) => {
     tab.classList.add('feature__link_active')

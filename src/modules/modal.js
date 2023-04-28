@@ -1,8 +1,8 @@
 "use strict";
 
-const modalFunc = () => {
-  const modalBtn = document.querySelector('.more')
-  const modal = document.querySelector('.modal')
+const modalFunc = (modalToShowButton, modalWindow) => {
+  const modalBtn = document.querySelector(modalToShowButton)
+  const modal = document.querySelector(modalWindow)
   const body = document.querySelector('body')
 
   modalBtn.addEventListener('click', () => {
