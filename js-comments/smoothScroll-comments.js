@@ -23,9 +23,15 @@ newArray.forEach(link => {
 
     const ID = event.target.getAttribute('href').substring(1)
 
-    document.getElementById(ID).scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    })
+    // document.getElementById(ID).scrollIntoView({
+    //   behavior: 'smooth',
+    //   block: 'start'
+    // })
+    // Более продвинутая кроссбраузерная версия scrollIntoView [https://www.npmjs.com/package/seamless-scroll-polyfill]
+    seamless.scrollIntoView(document.getElementById(ID), {
+      behavior: "smooth",
+      block: "start",
+      inline: "center",
+    });
   })
 })

@@ -6,16 +6,19 @@ const smoothScrollFunc = (links, scrollButton, testDriveButton) => {
   const testDriveBtn = document.querySelector(testDriveButton)
   const linksToScroll = [...headerLinks, scrollDownBtn, testDriveBtn]
 
+  console.log(seamless)
+
   linksToScroll.forEach(link => {
     link.addEventListener('click', (event) => {
       event.preventDefault()
 
       const ID = event.target.getAttribute('href').substring(1)
 
-      document.getElementById(ID).scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      })
+      seamless.scrollIntoView(document.getElementById(ID), {
+        behavior: "smooth",
+        block: "start",
+        inline: "center",
+      });
     })
   })
 }

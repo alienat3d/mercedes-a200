@@ -5,6 +5,7 @@
 const tabsHandlerElements = document.querySelectorAll('[data-tabs-handler]')
 // Также нам необходимо менять при смене активного таба текстовый блок под ним. Для этого снова соберём их в переменную:
 const tabsContentElements = document.querySelectorAll('[data-tabs-field]')
+const tabsTitleElements = document.querySelectorAll('.design__title')
 
 // Переберём полученный псевдомассив "tabsHandlerElements" с помощью метода "for-of".
 // Сперва укажем переменную, в которую при каждой итерации будет попадать элемент.
@@ -24,6 +25,16 @@ for (let btn of tabsHandlerElements) {
         content.classList.remove('hidden')
       } else {
         content.classList.add('hidden')
+      }
+    })
+    // Один из вариантов переключения заголовков табов.
+    // tabsTitleElements.forEach((title) => title.classList.toggle('hidden'))
+    // Другой (мой) вариант. Третий в tabs.js без "for-of", а с forEach.
+    tabsTitleElements.forEach(title => {
+      if (title.classList.contains('hidden')) {
+        title.classList.remove('hidden')
+      } else {
+        title.classList.add('hidden')
       }
     })
   })

@@ -5,29 +5,28 @@ const tabsFunc = (tabsHandler, tabsContent, tabsTitle) => {
   const tabsContentElements = document.querySelectorAll(tabsContent)
   const tabsTitleElements = document.querySelectorAll(tabsTitle)
 
-  for (let btn of tabsHandlerElements) {
-    btn.addEventListener('click', () => {
-      tabsHandlerElements.forEach(item =>
-        item.classList.remove('design-list__item_active'))
-      btn.classList.add('design-list__item_active')
+  tabsHandlerElements.forEach((tab, tabIdx) => {
+    tab.addEventListener('click', () => {
+      tabsHandlerElements.forEach(item => item.classList.remove('design-list__item_active'))
+      tab.classList.add('design-list__item_active')
 
-      tabsContentElements.forEach(content => {
-        if (content.dataset.tabsField === btn.dataset.tabsHandler) {
+      tabsContentElements.forEach((content) => {
+        if (content.dataset.tabsField === tab.dataset.tabsHandler) {
           content.classList.remove('hidden')
         } else {
           content.classList.add('hidden')
         }
       })
 
-      tabsTitleElements.forEach(title => {
-        if (title.classList.contains('hidden')) {
+      tabsTitleElements.forEach((title, titleIdx) => {
+        title.classList.add('hidden')
+
+        if (tabIdx === titleIdx) {
           title.classList.remove('hidden')
-        } else {
-          title.classList.add('hidden')
         }
       })
     })
-  }
+  })
 }
 
 export default tabsFunc
